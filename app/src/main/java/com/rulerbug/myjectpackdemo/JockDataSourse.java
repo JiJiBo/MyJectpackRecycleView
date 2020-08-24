@@ -39,7 +39,7 @@ public class JockDataSourse extends PageKeyedDataSource<Integer, JockBean.Result
             public void onResponse(Call call, Response response) throws IOException {
                 try {
                     String string = response.body().string();
-
+BugLogUtils.e(string);
                     JockBean bean = new Gson().fromJson(string, JockBean.class);
                     if (bean.getError_code() == 0) {
                         callback.onResult(bean.getResult().getData(), null, page + 1);

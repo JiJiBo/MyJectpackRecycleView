@@ -1,8 +1,13 @@
 package com.rulerbug.myjectpackdemo;
 
+import android.text.TextUtils;
+
+import androidx.databinding.ObservableField;
+import androidx.lifecycle.LiveData;
+
 import java.util.List;
 
-public  class JockBean {
+public class JockBean {
 
 
     /**
@@ -53,9 +58,9 @@ public  class JockBean {
         public static class DataBean {
             /**
              * content : 有一天晚上我俩一起吃西瓜，老大把西瓜籽很整洁的吐在了一张纸上，
-             过了几天，我从 教室回但宿舍看到老大在磕瓜子，
-             我就问他：老大，你什么时候买的瓜子？
-             老大说：刚晒好，说着抓了一把 要递给我……
+             * 过了几天，我从 教室回但宿舍看到老大在磕瓜子，
+             * 我就问他：老大，你什么时候买的瓜子？
+             * 老大说：刚晒好，说着抓了一把 要递给我……
              * hashId : bcc5fdc2fb6efc6db33fa242474f108a
              * unixtime : 1418814837
              * updatetime : 2014-12-17 19:13:57
@@ -63,8 +68,29 @@ public  class JockBean {
 
             private String content;
             private String hashId;
+
             private int unixtime;
-            private String updatetime;
+            private  String  updatetime  ;
+
+            public String getUnixtime() {
+                return unixtime+"";
+            }
+
+            public void setUnixtime(String unixtime) {
+                if(TextUtils.isEmpty(unixtime)){
+                    this.unixtime=0;
+                    return;
+                }
+                this.unixtime = Integer.valueOf(unixtime);
+            }
+
+            public String getUpdatetime() {
+                return updatetime ;
+            }
+
+            public void setUpdatetime(String updatetime) {
+                this.updatetime =updatetime;
+            }
 
             public String getContent() {
                 return content;
@@ -82,21 +108,7 @@ public  class JockBean {
                 this.hashId = hashId;
             }
 
-            public int getUnixtime() {
-                return unixtime;
-            }
 
-            public void setUnixtime(int unixtime) {
-                this.unixtime = unixtime;
-            }
-
-            public String getUpdatetime() {
-                return updatetime;
-            }
-
-            public void setUpdatetime(String updatetime) {
-                this.updatetime = updatetime;
-            }
         }
     }
 }

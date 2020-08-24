@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.paging.PagedList
+import com.rulerbug.bugutils.Utils.BugLogUtils
 import com.rulerbug.myjectpackdemo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,5 +28,8 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+        binding.bt.setOnClickListener {
+            BugLogUtils.e(jvm.list.value)
+        }
     }
 }

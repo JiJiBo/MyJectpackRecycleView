@@ -10,7 +10,6 @@
             type="com.rulerbug.myjectpackdemo.JockBean.ResultBean.DataBean" />
 
 
-
         <import type="androidx.paging.PagedList" />
 
         <variable
@@ -22,10 +21,16 @@
             type="android.content.Context" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/bt"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
@@ -34,5 +39,5 @@
             app:bindJockAdapterData="@{data}"
             app:bindJockContext="@{mc}" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>
